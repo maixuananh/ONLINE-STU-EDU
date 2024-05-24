@@ -1,0 +1,36 @@
+<div class="test-container">
+    <div *ngIf="test && test.questions.length > 1" class="container-question">
+        <ul class="list-question">
+            <li *ngFor="let question of test.questions.slice(0, decideList(test.questions.length / 2)); index as i" class="question">
+                <p>{{i + 1}}. {{question.noi_dung_cau_hoi}}</p>
+                <mat-radio-group class="mat-radio-group" aria-label="Select an option">
+                    <mat-radio-button (click)="clickEventAnswer(answer)" *ngFor="let answer of question.dap_an" class="mat-radio-button" value="{{answer.id_dapan}}">{{answer.noi_dung}}</mat-radio-button>
+                </mat-radio-group>
+            </li>
+        </ul>
+        <ul *ngIf="test" class="list-question">
+            <li *ngFor="let question of test.questions.slice(decideList(test.questions.length / 2), test.questions.length); index as i " class="question">
+                <p>{{i + 1 + decideList(test.questions.length / 2)}}. {{question.noi_dung_cau_hoi}}</p>
+                <mat-radio-group class="mat-radio-group" aria-label="Select an option">
+                    <mat-radio-button (click)="clickEventAnswer(answer)" *ngFor="let answer of question.dap_an" class="mat-radio-button" value="{{answer.id_dapan}}">{{answer.noi_dung}}</mat-radio-button>
+                </mat-radio-group>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="test && test.questions.length === 1" class="container-question">
+        <ul class="list-question">
+            <li *ngFor="let question of test.questions; index as i" class="question">
+                <p>{{i + 1}}. {{question.noi_dung_cau_hoi}}</p>
+                <mat-radio-group class="mat-radio-group" aria-label="Select an option">
+                    <mat-radio-button (click)="clickEventAnswer(answer)" *ngFor="let answer of question.dap_an" class="mat-radio-button" value="{{answer.id_dapan}}">{{answer.noi_dung}}</mat-radio-button>
+                </mat-radio-group>
+            </li>
+        </ul>
+    </div>
+    <div [ngClass]="{'average': time < 40, 'alert': time < 15, 'cook': time == 0}" class="container-time">
+        {{ time === 0 ? "COOK"  : time + '"'}}
+    </div>
+    <button (click)="clickEventSendTest()" mat-raised-button color="primary" class="login-button">NỘP</button>
+</div>
+<app-dialog-confirm-send-test [message]="messageDialogConfirm" (e_close_dialog)="clickEventCloseDialogConfirmSendTest()" (e_choice_dialog)="choiceEventSendTest($event)" *ngIf="isShowDialogConfirmSendTest"></app-dialog-confirm-send-test>
+<app-dialog-confirm-out-test (e_choice_dialog)="clickEventChoiceOutTest($event)" (e_close_dialog)="clickEventCloseDialogConfirmOutTest()" *ngIf="isShowDialogConfirmOutTest"></app-dialog-confirm-out-test>

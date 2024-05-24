@@ -1,0 +1,38 @@
+<div class="dialog-join-class">
+    <div class="title-bar-container">
+        <h3 class="title">Tham gia lớp học</h3>
+        <div (click)="clickEventCloseDialog()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="join-class-container">
+            <div class="top-nav">
+                <h3 class="class-id">Mã lớp</h3>
+                <p>Đề nghị giáo viên của bạn cung cấp mã lớp rồi nhập mã đó vào đây.</p>
+            </div>
+            <div [formGroup]="join_class_form" class="center-content">
+                <mat-form-field class="field-join-class">
+                    <mat-label>Mã lớp</mat-label>
+                    <input formControlName="classroom_id" type="text" matInput>
+                </mat-form-field>
+                <button (click)="clickEventJoinClass()" mat-raised-button color="primary" class="button-join">Tham gia</button>
+            </div>
+            <div class="bottom-content">
+                <p class="how-to-join-title">Cách đăng nhập vào lớp học</p>
+                <ul  class="join-step-container">
+                    <li class="step">
+                        Sử dụng tài khoản được cấp phép.
+                    </li>
+                    <li class="step">
+                        Sử dụng mã lớp học gồm 5-7 chữ cái hoặc số, không có dấu cách hoặc ký hiệu.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backdrop"></div>

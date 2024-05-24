@@ -1,0 +1,257 @@
+.sidebar-container {
+    width: 100%;
+    height: calc(100vh - 6.4006rem);
+}
+
+.content-container {
+    display: flex;
+    width: 100%;
+}
+
+app-classroom {
+    width: 100%;
+}
+
+mat-drawer {
+    width: 32rem;
+
+    border-right: 0.0625rem solid #e0e0e0;
+
+    & .mat-drawer-sidebar-container {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        & > .container-top {
+            height: fit-content;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            padding: 1rem 0;
+            padding-bottom: 1.5rem;
+
+            border-bottom: 0.0625rem solid #e0e0e0;
+
+            & > .main-button-sidebar {
+                display: flex;
+                align-items: center;
+                column-gap: 0.75rem;
+                height: 4rem;
+
+                width: 90%;
+
+                border-radius: 0 10rem 10rem 0;
+
+                transition: all 0.25s linear;
+
+                color: #3c4043;
+                font-weight: 500;
+
+                border: unset;
+                outline: unset;
+
+                cursor: pointer;
+
+                background: unset;
+
+                text-align: start;
+
+                padding: 0 3rem;
+
+                & > svg {
+                    width: 3.2rem;
+                    height: 3.2rem;
+                }
+                
+                &.isActive {
+                    background-color: rgba(26, 115, 232, .12);
+                }
+
+                &:hover {
+                    background-color: rgba(26, 115, 232, .12);
+                }
+            }
+        }
+
+        & > .container-bottom {
+            & > ul.function-container {
+                display: flex;
+                flex-direction: column;
+
+                & svg > path {
+                    fill: #5f6368;
+                }
+
+                & > li.function {
+                    display: flex;
+                    flex-direction: column;
+
+                    & > .content-function-container {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 0.75rem;
+                        height: 4rem;
+        
+                        border-radius: 0 10rem 10rem 0;
+        
+                        transition: all 0.25s linear;
+        
+                        border: unset;
+                        outline: unset;
+        
+                        cursor: pointer;
+        
+                        background: unset;
+        
+                        text-align: start;
+        
+                        padding: 0 3rem;
+    
+                        & > .container-left {
+                            position: relative;
+    
+                            display: flex;
+                            align-items: center;
+    
+                            & > svg:first-child {
+                                position: absolute;
+                                top: 50%;
+                                left: -2.5rem;
+                                transform: translateY(-50%);
+                            }
+
+                            & > svg:nth-child(2) {
+                                width: 3.2rem;
+                                height: 3.2rem;
+                            }
+                        }
+    
+                        & > .container-right {
+                            color: #3c4043;
+                            font-weight: 500;
+    
+                            margin-bottom: unset;
+                        }
+    
+                    }
+                    
+                    & > ul.list-classroom {
+                        display: flex;
+                        flex-direction: column;
+                        & > li.classroom {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 0.75rem;
+                            height: 4rem;
+            
+                            width: 90%;
+            
+                            border-radius: 0 10rem 10rem 0;
+            
+                            transition: all 0.25s linear;
+            
+                            color: #3c4043;
+                            font-weight: 500;
+            
+                            border: unset;
+                            outline: unset;
+            
+                            cursor: pointer;
+            
+                            background: unset;
+            
+                            text-align: start;
+            
+                            padding: 0 3rem;
+
+                            cursor: pointer;
+
+                            & > .class-avatar-container {
+                                width: 3.2rem;
+                                min-width: 3.2rem;
+                                height: 3.2rem;
+
+                                display: grid;
+                                place-content: center;
+
+                                font-size: 1.6rem;
+                                font-weight: 500;
+                                color: white;
+
+                                border-radius: 50%;
+                                
+                                background-color: rgb(19,115,51);
+                            }
+                            
+                            &.isActive {
+                                background-color: rgba(26, 115, 232, .12);
+                            }
+
+                            &:hover {
+                                background-color: rgba(26, 115, 232, .12);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+mat-drawer-content {
+    padding: 2rem;
+    padding-left: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+.list-card-classroom-container {
+    display: flex;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+.sidebar-show-icon {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+
+    display: grid;
+    place-content: center;
+
+    background-color: unset;
+    border: unset;
+    outline: unset;
+    box-shadow: unset;
+
+    width: 4rem;
+    height: 4rem;
+
+    border-radius: 50%;
+
+    background-color: rgba(128, 128, 128, 0.055);
+
+    cursor: pointer;
+
+    transition: all 0.2s linear;
+
+    &.active {
+        & > svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &:hover {
+        background-color: rgba(128, 128, 128, 0.105);
+    }
+}

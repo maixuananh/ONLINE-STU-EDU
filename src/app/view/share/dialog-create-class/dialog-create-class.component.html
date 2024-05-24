@@ -1,0 +1,31 @@
+<div class="dialog-create-class">
+    <div class="title-bar-container">
+        <h3 class="title">Tạo lớp học</h3>
+        <div (click)="clickEventCloseDialog()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="create-class-container">
+            <div class="top-nav">
+                <h3 class="class-id">Lớp của: {{username}}</h3>
+                <p>Tạo lớp học nơi chia sẻ các tài liệu học tập cho học sinh, làm đề thi</p>
+            </div>
+            <form [formGroup]="create_class_form" class="center-content">
+                <mat-form-field class="field-join-class">
+                    <mat-label>Tên lớp</mat-label>
+                    <input formControlName="class_name" type="text" matInput>
+                </mat-form-field>
+                <mat-form-field class="field-join-class">
+                    <mat-label>Thông tin lớp</mat-label>
+                    <input formControlName="description" type="text" matInput>
+                </mat-form-field>
+            </form>
+            <button (click)="clickEventCreateClass()" mat-raised-button color="primary" class="button-create">Tạo lớp</button>
+        </div>
+    </div>
+</div>
+<div class="backdrop"></div>

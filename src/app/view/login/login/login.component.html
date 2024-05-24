@@ -1,0 +1,39 @@
+<section class="home-container">
+<div class="container-right">
+    <h2 class="login-title">{{isLoginForm ? "LOGIN" : "REGISTER"}}</h2>
+    <form [formGroup]="register_form" *ngIf="isLoginForm == false" class="login-form-container">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" formControlName="password" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" formControlName="confirm_password" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput>
+        </mat-form-field>
+        <button [disabled]="!register_form.valid" (click)="clickEventRegister()" mat-raised-button color="primary"
+            class="login-button">REGISTER</button>
+    </form>
+    <form *ngIf="isLoginForm" [formGroup]="login_form" class="login-form-container">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" formControlName="password" matInput>
+        </mat-form-field>
+        <button [disabled]="!login_form.valid" (click)="clickEventLogin()" mat-raised-button color="primary"
+            class="login-button">LOGIN</button>
+    </form>
+    <p class="register-text">{{isLoginForm ? "Don't have account?" : "Have a account?"}} <span
+            (click)="clickEventChangeStatusAuth()">{{isLoginForm ? "Register" : "Login"}}</span></p>
+</div>
+</section>

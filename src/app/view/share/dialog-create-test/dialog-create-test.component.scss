@@ -1,0 +1,81 @@
+.dialog-create-test {
+    width: 90%;
+    height: 90%;
+
+    background-color: white;
+
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 2rem;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 102;
+
+    display: flex;
+    flex-direction: column;
+
+    & > .title-bar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 2rem;
+
+        border-bottom: 0.0625rem solid #e0e0e0;
+
+        & > h3.title {
+            font-size: 2.6rem;
+            font-weight: 500;
+            margin-bottom: unset;
+        }
+
+        & > div {
+            cursor: pointer;
+        }
+    }
+
+    & > .content-container {
+        display: flex;
+        column-gap: 5rem;
+
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+
+        padding: 2rem;
+
+        & > div, form {
+            display: flex;
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        & > .container-right {
+            flex: 2;
+
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        & > .container-center {
+            & > button {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+
+    background-color: rgba(0, 0, 0, 0.429);
+}

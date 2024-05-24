@@ -1,0 +1,104 @@
+<div class="dialog-create-test">
+    <div class="title-bar-container">
+        <h3 class="title">Tạo Đề Thi</h3>
+        <div (click)="clickEventCloseDialog()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+    </div>
+    <div class="content-container">
+        <form [formGroup]="test_form" class="container-left">
+            <mat-form-field class="field-create-test">
+                <mat-label>Tên Đề Thi</mat-label>
+                <input formControlName="test_name" matInput placeholder="Tên đề thi">
+            </mat-form-field>
+            <mat-form-field class="field-create-test">
+                <mat-label>Thời gian làm bài</mat-label>
+                <input formControlName="time" matInput placeholder="Thời gian làm bài">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Chọn Lớp</mat-label>
+                <mat-select (valueChange)="clickEventSelectClass($event)">
+                    <mat-option *ngFor="let class of _class" value="{{class.ma_lop}}">{{class.ten_lop}}</mat-option>
+                    <mat-option *ngIf="_class.length == 0">Không có lớp để chọn</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+        <form [formGroup]="question_form" class="container-center">
+            <mat-form-field class="field-create-test">
+                <mat-label>Nội dung câu hỏi</mat-label>
+                <input formControlName="question" matInput placeholder="Câu hỏi">
+            </mat-form-field>
+            <mat-form-field class="field-create-test">
+                <mat-label>Câu trả lời A</mat-label>
+                <input formControlName="answerA" matInput placeholder="Câu trả lời">
+            </mat-form-field>
+            <mat-form-field class="field-create-test">
+                <mat-label>Câu trả lời B</mat-label>
+                <input formControlName="answerB" matInput placeholder="Câu trả lời">
+            </mat-form-field>
+            <mat-form-field class="field-create-test">
+                <mat-label>Câu trả lời C</mat-label>
+                <input formControlName="answerC" matInput placeholder="Câu trả lời">
+            </mat-form-field>
+            <mat-form-field class="field-create-test">
+                <mat-label>Câu trả lời D</mat-label>
+                <input formControlName="answerD" matInput placeholder="Câu trả lời">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Câu trả lời đúng</mat-label>
+                <mat-select (valueChange)="clickEventSelectValueAnswer($event)">
+                    <mat-option value="1">A</mat-option>
+                    <mat-option value="2">B</mat-option>
+                    <mat-option value="3">C</mat-option>
+                    <mat-option value="4">D</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button (click)="clickEventAddQuestion()" mat-raised-button color="primary" class="login-button">Thêm câu
+                hỏi</button>
+        </form>
+        <div class="container-right">
+            <table *ngIf="dataSource.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="question">
+                    <th mat-header-cell *matHeaderCellDef> Question </th>
+                    <td mat-cell *matCellDef="let element"> {{element.question}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="answerA">
+                    <th mat-header-cell *matHeaderCellDef> Answer A </th>
+                    <td mat-cell *matCellDef="let element"> {{element.answerA}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="answerB">
+                    <th mat-header-cell *matHeaderCellDef> Answer B </th>
+                    <td mat-cell *matCellDef="let element"> {{element.answerB}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="answerC">
+                    <th mat-header-cell *matHeaderCellDef> Answer C </th>
+                    <td mat-cell *matCellDef="let element"> {{element.answerC}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="answerD">
+                    <th mat-header-cell *matHeaderCellDef> Answer D </th>
+                    <td mat-cell *matCellDef="let element"> {{element.answerD}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+    <button (click)="clickEventCreateTest()" mat-raised-button color="primary" class="login-button">Tạo đề thi</button>
+</div>
+<div class="backdrop"></div>

@@ -1,0 +1,41 @@
+<div class="grade-page-container">
+  <mat-form-field>
+    <mat-label>Chọn Đề Thi</mat-label>
+    <mat-select (valueChange)="clickEventSelectTest($event)">
+      <mat-option *ngFor="let test of tests; index as i" value="{{i}}">{{test.ten_de_thi}}</mat-option>
+      <mat-option *ngIf="tests.length == 0">Không có bài kiểm tra để chọn</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h3 class="title-grade-test">{{test_selected ? test_selected.ten_de_thi : ''}}</h3>
+  <div *ngIf="dataSource.length === 0 && test_selected" class="empty-container">
+    <h3>Hiện không có bất kì thống kê điểm số nào</h3>
+    <button (click)="clickEventCreateGradePoint()" mat-raised-button color="primary" class="button-create">Tạo thống kê</button>
+  </div>
+  <table *ngIf="dataSource.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username. </th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="correctCount">
+      <th mat-header-cell *matHeaderCellDef> Number Correct </th>
+      <td mat-cell *matCellDef="let element"> {{element.correctCount}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef> Total </th>
+      <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="isPass">
+      <th mat-header-cell *matHeaderCellDef> Pass </th>
+      <td mat-cell *matCellDef="let element"> {{element.isPass ? 'Pass' : 'Fail' }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

@@ -1,0 +1,24 @@
+<div class="dialog-confirm-test">
+    <div class="title-bar-container">
+        <h3 class="title">Đề thi</h3>
+        <div (click)="clickEventCloseDialog()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="create-class-container">
+            <div class="top-nav">
+                <h3 class="class-id">Tên đề: {{nameTest}}</h3>
+                <p>Khi bạn nhấn bắt đầu làm bài thì thời gian làm bài sẽ bắt đầu. Bạn có muốn bắt đầu làm bài?</p>
+            </div>
+            <div class="button-container">
+                <button (click)="clickEventConfirmDialog(false)" mat-raised-button color="gray" class="button-create">Hủy</button>
+                <button (click)="clickEventConfirmDialog(true)" mat-raised-button color="primary" class="button-create">Bắt đầu làm bài</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backdrop"></div>

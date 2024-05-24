@@ -1,0 +1,26 @@
+.mat-elevation-z8 {
+    width: 100%;
+}
+
+.grade-page-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 5rem;
+
+    & > h3 {
+        font-size: 3.2rem;
+        font-weight: 500;
+    }
+
+    width: 100%;
+
+    padding: 5rem;
+
+    & > .empty-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}

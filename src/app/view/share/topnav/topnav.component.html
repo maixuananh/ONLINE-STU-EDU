@@ -1,0 +1,32 @@
+<mat-toolbar class="topnav-container">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span routerLink="/home" class="topnav-title">Lớp học</span>
+    <span class="example-spacer"></span>
+    <button [matMenuTriggerFor]="menuAdd" mat-icon-button class="example-icon favorite-icon add-icon-topnav"
+        aria-label="Example icon-button with heart icon">
+        <mat-icon>add</mat-icon>
+    </button>
+    <button [matMenuTriggerFor]="menuAdmin" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>apps</mat-icon>
+    </button>
+    <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon avatar-icon-topnav"
+        aria-label="Example icon-button with share icon">
+        <img src="assets/default.jpg" alt="avatar">
+    </button>
+    <mat-menu #menu="matMenu">
+        <button (click)="clickEventLogout()" mat-menu-item>Logout</button>
+    </mat-menu>
+    <mat-menu #menuAdd="matMenu">
+        <button (click)="clickEventShowDialogAddTest()" mat-menu-item>Tạo đề thi</button>
+        <button (click)="clickEventShowDialogCreateClass()" mat-menu-item>Tạo lớp</button>
+        <button (click)="clickEventShowDialogJoinClass()" mat-menu-item>Tham gia lớp học</button>
+    </mat-menu>
+    <mat-menu #menuAdmin="matMenu">
+        <button routerLink="/grade-page" mat-menu-item>Thống kê điểm</button>
+    </mat-menu>
+</mat-toolbar>
+<app-dialog-create-test *ngIf="isShowDialogAddTest" (e_close_dialog)="clickEventCloseDialog()"></app-dialog-create-test>
+<app-dialog-join-class *ngIf="isShowDialogJoinClass" (e_close_dialog)="clickEventCloseDialogJoinClass()"></app-dialog-join-class>
+<app-dialog-create-class *ngIf="isShowDialogCreateClass" (e_close_dialog)="clickEventCloseDialogCreateClass()"></app-dialog-create-class>

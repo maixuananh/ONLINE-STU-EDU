@@ -1,0 +1,22 @@
+<div class="classroom-container">
+    <div class="banner-container">
+        <div class="information-container">
+            <h3 class="title">Title</h3>
+            <p>Nhóm 6</p>
+        </div>
+        <div (click)="clickEventCopyIdJoin()" class="classroom-id">
+            {{classRoomJoinId}}
+            <div class="tooltip">Click để copy</div>
+        </div>
+    </div>
+    <ul class="list-exam">
+        <li (click)="test.isDone ? undefined : clickEventChoiceTest(test)" *ngFor="let test of _tests" class="exam" [ngClass]="{'isDone': test.isDone}">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+            <div class="content">
+                <p class="exam-title">{{test.ten_de_thi}}</p>
+                <p>Thời gian làm bài: {{test.thoi_gian_lam_bai}} phút</p>
+            </div>
+        </li>
+    </ul>
+</div>
+<app-dialog-confirm-test (e_confirm_dialog)="clickEventConfirmStartTest($event)" [nameTest]="test_choice?.ten_de_thi || ''" *ngIf="isShowDialogConfirmTest" (e_close_dialog)="clickEventCloseDialog()"></app-dialog-confirm-test>

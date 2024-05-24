@@ -1,0 +1,19 @@
+<div class="dialog-confirm-out-test">
+    <div class="title-bar-container">
+        <h3 class="title">Thoát bài</h3>
+        <div (click)="clickEventCloseDialog()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+    </div>
+    <div class="content-container">
+        <p class="description">Bài của bạn đang gặp sự cố hoặc hết thời gian nộp bạn có muốn thoát khỏi bài làm?</p>
+        <div class="button-container">
+            <button (click)="clickEventChoice(false)" mat-raised-button color="gray" class="button-create">Hủy</button>
+            <button (click)="clickEventChoice(true)" mat-raised-button color="primary" class="button-create">Thoát</button>
+        </div>
+    </div>
+</div>
+<div class="backdrop"></div>
