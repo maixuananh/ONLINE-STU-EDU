@@ -1,27 +1,45 @@
-# Tracnghiem
+# Dự án Xây dựng phần mềm thi trực tuyến  
+Giới Thiệu
+Online STU EDU là một ứng dụng web cho phép người dùng thi trực tuyến. Ứng dụng được xây dựng bằng Angular cho giao diện người dùng và có thể kết nối với backend để quản lý dữ liệu thi.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+# Tính Năng
+1. Đăng nhập và đăng ký người dùng
+2. Đăng nhập sử dụng cơ chế lưu token 
+3. Chọn bài thi từ danh sách có sẵn
+4. Làm bài thi với thời gian giới hạn
+5. Xem kết quả sau khi hoàn thành bài thi
+6. Sinh viên tham gia nhóm học phần bằng mã mời.
 
-## Development server
+# Yêu Cầu Hệ Thống
+Node.js (phiên bản 15.x hoặc cao hơn)
+npm (phiên bản 8.x hoặc cao hơn)
+Angular CLI (phiên bản 15.x hoặc cao hơn)
+### Hướng dẫn cài đặt
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clone Repository
+git clone https://github.com/maixuananh/webThi.git
+cd webThi
+2. Cài Đặt Các Gói Phụ Thuộc
+npm install
+3. Chạy Ứng Dụng
+ng serve
+Ứng dụng sẽ chạy tại http://localhost:4200.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Cấu Trúc Thư Mục
+-src/app: Chứa mã nguồn của ứng dụng
+-----components: Chứa các component của ứng dụng
+----------services: Chứa các dịch vụ để giao tiếp với backend
+-----------models: Chứa các mô hình dữ liệu
+-------------app-routing.module.ts: Cấu hình các route của ứng dụng
+---------app.module.ts: Module chính của ứng dụng
+5. Sử Dụng
+Đăng Ký/Đăng Nhập:
+Người dùng mới có thể đăng ký tài khoản.
+Người dùng hiện tại có thể đăng nhập vào hệ thống.
+Chọn Bài Thi:
+Sau khi đăng nhập, người dùng có thể chọn bài thi từ danh sách bài thi có sẵn.
+Làm Bài Thi:
+Người dùng làm bài thi trong thời gian giới hạn.
+Các câu hỏi sẽ được hiển thị và người dùng chọn câu trả lời.
+Xem Kết Quả:
+Sau khi hoàn thành bài thi, người dùng có thể xem kết quả và điểm số.
