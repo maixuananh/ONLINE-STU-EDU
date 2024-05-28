@@ -15,9 +15,8 @@ Node.js (phiên bản 15.x hoặc cao hơn)
 npm (phiên bản 8.x hoặc cao hơn)
 Angular CLI (phiên bản 15.x hoặc cao hơn)
 ### Hướng dẫn cài đặt
-
 1. Clone Repository
-git clone https://github.com/maixuananh/webThi.git
+git clone https://github.com/maixuananh/ONLINE-STU-EDU.git
 cd webThi
 2. Cài Đặt Các Gói Phụ Thuộc
 npm install
@@ -25,21 +24,14 @@ npm install
 ng serve
 Ứng dụng sẽ chạy tại http://localhost:4200.
 
-4. Cấu Trúc Thư Mục
--src/app: Chứa mã nguồn của ứng dụng
------components: Chứa các component của ứng dụng
-----------services: Chứa các dịch vụ để giao tiếp với backend
------------models: Chứa các mô hình dữ liệu
--------------app-routing.module.ts: Cấu hình các route của ứng dụng
----------app.module.ts: Module chính của ứng dụng
-5. Sử Dụng
-Đăng Ký/Đăng Nhập:
+# Sử Dụng
+1. Đăng Ký/Đăng Nhập:
 Người dùng mới có thể đăng ký tài khoản.
 Người dùng hiện tại có thể đăng nhập vào hệ thống.
-Chọn Bài Thi:
+2. Chọn Bài Thi:
 Sau khi đăng nhập, người dùng có thể chọn bài thi từ danh sách bài thi có sẵn.
-Làm Bài Thi:
+3. Làm Bài Thi:
 Người dùng làm bài thi trong thời gian giới hạn.
 Các câu hỏi sẽ được hiển thị và người dùng chọn câu trả lời.
-Xem Kết Quả:
+4. Xem Kết Quả:
 Sau khi hoàn thành bài thi, người dùng có thể xem kết quả và điểm số.
