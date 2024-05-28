@@ -17,7 +17,7 @@ Angular CLI (phiên bản 15.x hoặc cao hơn)
 ### Hướng dẫn cài đặt
 1. Clone Repository
 git clone https://github.com/maixuananh/ONLINE-STU-EDU.git
-cd webThi
+cd ONLINE-STU-EDU
 2. Cài Đặt Các Gói Phụ Thuộc
 npm install
 3. Chạy Ứng Dụng
